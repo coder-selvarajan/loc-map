@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-marker {
+  text-align: center;
+  line-height: 12px; /* Adjust based on your font size */
+  font-size: 12px; /* Small text size */
+  width: 100px; /* Ensure text is centered above the icon */
+  margin-left: -50px; /* Half of the width to center the text block */
+  margin-bottom: 25px; /* Height of the icon to place text above */
+  background-color: transparent; /* Make background transparent */
+  color: maroon; /* Adjust as needed for visibility */
+  font-weight: bold; /* Optional: Make text bold for better visibility */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Adds a subtle shadow for better readability */
+}
