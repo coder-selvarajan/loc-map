@@ -1,0 +1,15 @@
+{
+    "locations": [
+        { "display": "16L \nSydney", "name": "Sydney Sixers(16L)", "lat": 11.102559151496372, "lng": 76.99980101445908, "price": "16L", "info": "Nivara Avenue Group \n3.5 to 4 cents \nNorth facing \nUp & Down road route \nTidel Park back side" },
+        { "display": "6L \nFairland", "name": "Greenfield Fairland", "lat": 11.174904708131766, "lng": 77.089438028275, "price": "5.9L", "info": "120 acre land \nupto 10 phases \n5.9 lac / cent \ngood amenities \nneed to travel few kilometres for shops \n8km to Kovil palayam" },
+        { "display": "6.3L \nGrandePa", "name": "Grande Paradise", "lat": 11.163958066309586, "lng": 77.10694748795099, "price": "6.3L", "info": "Area: PonneGoundan Potur \n6.3L per cent \nThey offer built house too \n49L per house in 3.5 cent \nGood for investment" },
+        { "display": "17L \nOpulent", "name": "The Opulent", "lat": 11.076700, "lng": 77.058200, "price": "17L", "info": "Kalapatti \nBy Ramani Group - Premium builder \n17L per cent \nBig layout \nNear by Kousik Nathi \nSchool is near by" },
+        { "display": "6L \nMetroGrand", "name": "Metro Grand", "lat": 11.128190540497929, "lng": 77.07014698955139, "price": "5.9L", "info": "Kovilpalayam \n5.9L per cent \nRaja bought land here \nMany houses are built \n5km to Kovilpalayam \nLittle outer. Need to travel a few kilometers for shops." },
+        { "display": "14L \nAeroCity", "name": "Aero City", "lat": 11.09491364067345, "lng": 77.0408221705459, "price": "12 to 14L", "info": "Kalapatti Land \nBehind SVB IT Park \n12 to 14L per cent \nOnly South facing available \nAll are Kuthal road only" },
+        { "display": "12L \nRoyalPar", "name": "Royal Paradise Farm Plots", "lat": 11.080302924494166, "lng":77.05427084158329, "price": "12L", "info": "Kaikolapalayam \n 7+ acres - 28 plots \nMin 20 cents - farm land \n12L per cent " },
+        { "display": "11.5L \nCentralPark", "name": "Central Park", "lat": 11.083283599645013, "lng":77.06469152059027, "price": "11.5L", "info": "Mylampatti \n11.5L per cent \n10 mins to Airport" },
+        { "display": "10L \nSkyPark", "name": "SkyPark Residency", "lat": 11.078969339637432, "lng":77.06767553274611, "price": "10L", "info": "Mylampatti \n10L per cent \nSouth facing" },
+        { "display": "18L \nIndLand", "name": "Individual Land", "lat": 11.05423671771998, "lng":77.01002672195644, "price": "18L", "info": "Chera Ma Nagar \n 18L per cent \nNear Prabu's house \nMain city area \nSlight kuthal \nOne hostel is there behind \nNot much plots left" },
+        { "display": "16.5L \nNivaraAve", "name": "Nivara Avenue", "lat": 11.095392317135596, "lng":77.00050250057514, "price": "16.5L", "info": "3KM to Saravanampatti junction \n1KM to IT park \nApt on for now \nMurugan temple is near by" }
+      ]
+}
