@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css';
 // import MarkerClusterGroup from 'react-leaflet-markercluster';
 // import 'react-leaflet-markercluster/dist/styles.min.css'; // Import stylesheet
 import data from '../resources/data.json';
+// import data from '../resources/location-data.json';
 
 // Example JSON data
 const locationData = data.locations;
@@ -68,8 +69,10 @@ const MapComponent = () => {
     };
   }, [mapRef.current]);
 
+  "lat": 11.078969339637432,
+  "lng": 77.06767553274611,
   return (
-    <MapContainer center={[11.101100, 76.990900]} zoom={13} style={{ height: '100vh', width: '100%' }}
+    <MapContainer center={[11.12819, 77.07015]} zoom={16} style={{ height: '100vh', width: '100%' }}
       whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
