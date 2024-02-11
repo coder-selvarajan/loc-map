@@ -91,3 +91,42 @@ body {
 .side-pane {
   overflow-y: scroll;
 }
+
+/* Mobile popup styles */
+/* Ensure side pane is fixed on the right side for desktop */
+.side-pane {
+  width: 300px;
+  height: 100vh;
+  position: fixed; /* Fixed positioning to keep it on the right */
+  top: 0;
+  right: 0; /* Position on the right */
+  background: rgba(250, 250, 250, 0.85);
+  padding: 20px;
+  border-left: 1px solid grey;
+  box-sizing: border-box;
+  overflow-y: auto;
+  text-align: left;
+  z-index: 1000; /* Ensure it's above the map */
+}
+
+/* Adjustments for mobile popup */
+@media (max-width: 768px) {
+  .side-pane {
+    display: none; /* Hide by default on mobile */
+  }
+
+  .mobile-popup {
+    display: block; /* Show when active */
+    position: fixed; /* Fixed at the bottom */
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    bottom: 0;
+    top: auto; /* Allow it to grow upwards */
+    right: 0;
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid grey;
+    max-height: 80vh; /* Maximum height */
+    overflow-y: auto; /* Scrollable content */
+    z-index: 1001; /* Above other content */
+  }
+}
