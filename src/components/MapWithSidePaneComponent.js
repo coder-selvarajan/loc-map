@@ -97,7 +97,7 @@ const MapSidePaneComponent = () => {
     <>
       {/* <MapContainer center={[11.09491, 77.04082]} zoom={13.5} style={{ height: '100vh', width: isMobile ? '100%' : 'calc(100% - 300px)' }}
           whenCreated={mapInstance => { mapRef.current = mapInstance; }}> */}
-      <MapContainer center={[11.09491, 77.04082]} zoom={13.5} style={{ height: '100vh', width: 'calc(100% - 300px)' }}
+      <MapContainer center={[11.09491, 77.04082]} zoom={12.5} style={{ height: '100vh', width: 'calc(100% - 300px)' }}
         whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

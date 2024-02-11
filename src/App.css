@@ -37,11 +37,6 @@
   }
 }
 
-body {
-  overflow: hidden; /* Hide scrollbars */
-  overflow-y: scroll;
-}
-
 .leaflet-div-icon {
   background: transparent !important;
   border: none !important;
@@ -86,4 +81,13 @@ p {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+body {
+  overflow: hidden; /* Hide scrollbars */
+  
+}
+
+.side-pane {
+  overflow-y: scroll;
 }
