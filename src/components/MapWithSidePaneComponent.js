@@ -90,9 +90,9 @@ const MapSidePaneComponent = () => {
   };
 
   // Open popup when a location is selected on mobile
-  useEffect(() => {
-    if (isMobile) setIsPopupVisible(true);
-  }, [selectedLocation, isMobile]);
+  // useEffect(() => {
+  //   if (isMobile) setIsPopupVisible(true);
+  // }, [selectedLocation, isMobile]);
 
   return (
     <>
