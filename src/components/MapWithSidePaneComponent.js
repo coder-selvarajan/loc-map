@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
+import React, { useState, useRef } from 'react';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FaLocationDot, FaIndianRupeeSign, FaLink } from "react-icons/fa6";
 import { BsImage } from "react-icons/bs";
 import YoutubeEmbed from "./YoutubeEmbed";
 import data from '../resources/location-data.json'; // Ensure this import path is correct
-
-// Example JSON data
-const locationData = data.locations;
 
 // Fixing an issue with the default marker icons
 delete L.Icon.Default.prototype._getIconUrl;
@@ -37,7 +34,6 @@ const createCustomMarkerIcon = (name, isSelected) => new L.DivIcon({
 });
 
 const MapSidePaneComponent = () => {
-  const [textSize, setTextSize] = useState(11); // Default text size
   const [selectedLocation, setSelectedLocation] = useState(data.locations[0]); // State to hold the selected location
   const mapRef = useRef(null);
   
@@ -58,7 +54,7 @@ const MapSidePaneComponent = () => {
           <>
             <FaLink/> 
             {location.links.map((link, index) => (
-              <span key={index}>&nbsp; &nbsp; <a href={link} target='_blank'>Website</a>&nbsp; </span>
+              <span key={index}>&nbsp; &nbsp; <a href={link} target='_blank' rel="noreferrer">Website</a>&nbsp; </span>
             ))}
           </> } 
         </p>
