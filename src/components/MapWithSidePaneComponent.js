@@ -28,8 +28,9 @@ const createCustomMarkerIcon = (name, isSelected) => new L.DivIcon({
 });
 
 const MapSidePaneComponent = () => {
-  const [selectedLocation, setSelectedLocation] = useState(data.locations[0]); // State to hold the selected location
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768); // Added to detect mobile view
+  const [selectedLocation, setSelectedLocation] = useState(window.innerWidth < 768 ? null : data.locations[0]); // State to hold the selected location
+  
   const [isPopupVisible, setIsPopupVisible] = useState(false); // Added to control popup visibility on mobile
 
   // Update isMobileView based on window width
@@ -54,7 +55,12 @@ const MapSidePaneComponent = () => {
 
     return (
       <div className={`side-pane ${isMobileView && isPopupVisible ? 'mobile-popup' : ''}`} >
-        {isMobileView && <button onClick={handleClose} style={{ position: 'absolute', top: '10px', right: '10px' }}>Close</button>}
+        {isMobileView && 
+        <button onClick={handleClose} style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'red', color: 'white', border: 'none', borderRadius: '5px', padding: '10px 15px', cursor: 'pointer' }}>Close</button>
+
+        // <button onClick={handleClose} style={{ position: 'absolute', top: '10px', right: '10px' }}>Close</button>
+        
+        }
         <h2>{location.name}</h2>
         
         <p> <FaLocationDot /> &nbsp; {location.location}</p>
