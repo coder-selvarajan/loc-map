@@ -37,6 +37,11 @@
   }
 }
 
+body {
+  overflow: hidden; /* Hide scrollbars */
+  overflow-y: scroll;
+}
+
 .leaflet-div-icon {
   background: transparent !important;
   border: none !important;
@@ -62,6 +67,10 @@
 
 p svg {
   color: blue;
+}
+
+p {
+  vertical-align: middle;
 }
 
 .video-responsive {

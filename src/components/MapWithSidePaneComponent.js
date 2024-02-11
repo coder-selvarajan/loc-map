@@ -2,11 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { FaLocationDot, FaIndianRupeeSign, FaHouse } from "react-icons/fa6";
+import { FaLocationDot, FaIndianRupeeSign, FaLink } from "react-icons/fa6";
 import { BsImage } from "react-icons/bs";
 import YoutubeEmbed from "./YoutubeEmbed";
-
-// import data from '../resources/data.json'; // Ensure this import path is correct
 import data from '../resources/location-data.json'; // Ensure this import path is correct
 
 // Example JSON data
@@ -20,11 +18,17 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-const createCustomMarkerIcon = (name, textSize) => new L.DivIcon({
+const createCustomMarkerIcon = (name, isSelected) => new L.DivIcon({
+  // html: `
+  //   <div style="display: flex; align-items: center;">
+  //     <img src="${L.Icon.Default.prototype.options.iconUrl}" style="margin-right: 4px;"/>
+  //     <span style="font-size: ${textSize}px; font-weight: bold; text-align: left;">${name}</span>
+  //   </div>
+  // `,
   html: `
-    <div style="display: flex; align-items: center;">
+    <div style="display: flex; align-items: center; background-color: ${isSelected ? '#ffdfba' : 'transparent'}; padding: 4px; border-radius: 8px;">
       <img src="${L.Icon.Default.prototype.options.iconUrl}" style="margin-right: 4px;"/>
-      <span style="font-size: ${textSize}px; font-weight: bold; text-align: left;">${name}</span>
+      <span style="font-size: ${isSelected ? '12' : '11'}px; color: ${isSelected ? 'red' : 'black'}; font-weight: bold; text-align: left;">${name}</span>
     </div>
   `,
   className: 'custom-marker-icon',
@@ -34,8 +38,9 @@ const createCustomMarkerIcon = (name, textSize) => new L.DivIcon({
 
 const MapSidePaneComponent = () => {
   const [textSize, setTextSize] = useState(11); // Default text size
-  const [selectedLocation, setSelectedLocation] = useState(null); // State to hold the selected location
+  const [selectedLocation, setSelectedLocation] = useState(data.locations[0]); // State to hold the selected location
   const mapRef = useRef(null);
+  
 
   // Side Pane Content Component
   const SidePane = ({ location }) => {
@@ -44,9 +49,19 @@ const MapSidePaneComponent = () => {
     return (
       <div className="side-pane" style={{ width: '300px', height: '100vh', position: 'absolute', top: '0', right: '0', background: 'whitesmoke', padding: '20px', borderLeft: '1px grey solid', boxSizing: 'border-box', textAlign: "left" }}>
         <h2>{location.name}</h2>
+        
         <p> <FaLocationDot /> &nbsp; {location.location}</p>
         <p> <BsImage /> &nbsp; {location.landarea}</p>
         <p> <FaIndianRupeeSign/> &nbsp; {location.price}</p>
+        <p> 
+        { (location.links.length > 0) && 
+          <>
+            <FaLink/> 
+            {location.links.map((link, index) => (
+              <span key={index}>&nbsp; &nbsp; <a href={link} target='_blank'>Website</a>&nbsp; </span>
+            ))}
+          </> } 
+        </p>
         <hr />
         <span className='section'>Amenities:</span>
         <ul>
@@ -60,7 +75,8 @@ const MapSidePaneComponent = () => {
           <li key={index}>{line}</li>
         ))}
         </ul>
-        <span className='section'>Photos & Videos:</span>
+        { (location.videos.length > 0) && <span className='section'>Videos:</span>}
+        
         {location.videos.map((videoId, index) => (
           <p>
           <YoutubeEmbed embedId={videoId} />
@@ -71,9 +87,6 @@ const MapSidePaneComponent = () => {
     );
   };
 
-  useEffect(() => {
-    // The existing useEffect logic for updating label visibility, etc., can remain here.
-  }, [mapRef.current]); // This ensures the effect runs when mapRef.current changes
 
   return (
     <>
@@ -84,14 +97,24 @@ const MapSidePaneComponent = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         {data.locations.map((location, index) => (
+          // <Marker key={index} position={[location.lat, location.lng]} 
+          //         icon={createCustomMarkerIcon(location.display, textSize)}
+          //         eventHandlers={{
+          //           click: () => {
+          //             setSelectedLocation(location);
+          //           },
+          //         }}>
+          // </Marker>
           <Marker key={index} position={[location.lat, location.lng]} 
-                  icon={createCustomMarkerIcon(location.display, textSize)}
+                  icon={createCustomMarkerIcon(location.display, selectedLocation === location)}
                   eventHandlers={{
                     click: () => {
                       setSelectedLocation(location);
+                      
                     },
                   }}>
           </Marker>
+          
         ))}
       </MapContainer>
       <SidePane location={selectedLocation} />
@@ -100,3 +123,5 @@ const MapSidePaneComponent = () => {
 };
 
 export default MapSidePaneComponent;
+
+

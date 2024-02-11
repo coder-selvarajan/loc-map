@@ -69,8 +69,6 @@ const MapComponent = () => {
     };
   }, [mapRef.current]);
 
-  "lat": 11.078969339637432,
-  "lng": 77.06767553274611,
   return (
     <MapContainer center={[11.12819, 77.07015]} zoom={16} style={{ height: '100vh', width: '100%' }}
       whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
