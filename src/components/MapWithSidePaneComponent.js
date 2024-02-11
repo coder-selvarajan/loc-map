@@ -1,9 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FaLocationDot, FaIndianRupeeSign, FaLink } from "react-icons/fa6";
-import { FaTimes } from "react-icons/fa"; // Include FaTimes for the close button
 import { BsImage } from "react-icons/bs";
 import YoutubeEmbed from "./YoutubeEmbed";
 import data from '../resources/location-data.json';
