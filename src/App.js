@@ -1,5 +1,4 @@
 import './App.css';
-// import MapComponent from './components/MapComponent';
 import MapSidePaneComponent from './components/MapWithSidePaneComponent';
 
 function App() {
