@@ -335,7 +335,22 @@
         "photos": [],
         "videos": ["Lcjm-hUVkfQ", "XLXNIbCnb5k"],
         "links": []
-      }      
+      },
+      {
+        "display": "19L \nDiamond",
+        "name": "Diamond City",
+        "lat": 11.060944097546242, 
+        "lng": 77.00736097537265,
+        "price": "19L per cent",
+        "landarea": "4 cent",
+        "notes": "Main Area \nSite #2 available",
+        "location": "Vinayagapuram, Vilankurichi Main Road",
+        "amenities": ["Compound"],
+        "photos": [],
+        "videos": [],
+        "links": []
+      }
+
     ]
   }
   
